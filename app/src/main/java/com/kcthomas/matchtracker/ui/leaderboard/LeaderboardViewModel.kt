@@ -3,14 +3,13 @@ package com.kcthomas.matchtracker.ui.leaderboard
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.kcthomas.core.util.LoadState
 import com.kcthomas.data.player.PlayerRepositoryImpl
 import com.kcthomas.domain.player.Player
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -30,12 +29,13 @@ class LeaderboardViewModel @Inject constructor(
     val orderState
         get() = _orderState
 
+    private val disposables = CompositeDisposable()
+
     init {
         loadPlayers()
     }
 
     private fun loadPlayers() {
-
         _viewState.value = LoadState.InFlight
         repository.getAll()
             .subscribeOn(Schedulers.io())
@@ -46,11 +46,11 @@ class LeaderboardViewModel @Inject constructor(
                     reorderPlayers(_orderState.value!!)
                 },
                 { throwable ->
-                    Log.w(TAG, "${throwable.message}")
+                    Log.e(TAG, "${throwable.message}")
                     _viewState.value = LoadState.Error
                 }
             )
-
+            .also { disposables.add(it) }
     }
 
     fun updateOrderState(orderBy: OrderBy) {
@@ -80,4 +80,8 @@ class LeaderboardViewModel @Inject constructor(
         }
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        disposables.clear()
+    }
 }
