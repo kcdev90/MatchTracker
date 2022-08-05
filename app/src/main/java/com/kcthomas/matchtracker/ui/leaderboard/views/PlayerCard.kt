@@ -82,14 +82,14 @@ fun PlayerCard(
 
             Statistic(
                 label = "T",
-                statistic = player.matchesPlayed
+                statistic = "${player.matchesPlayed}"
             )
 
             Slash()
 
             Statistic(
                 label = "W",
-                statistic = player.matchesWon
+                statistic = "${player.matchesWon}"
             )
 
             Slash()
@@ -139,14 +139,14 @@ fun PreviewPlayerCard() {
             Player(
                 id = "1",
                 name = "Alice",
-                matchesPlayed = "10",
-                matchesWon = "5"
+                matchesPlayed = 10,
+                matchesWon = 5
             )
             Player(
                 id = "2",
                 name = "Bob",
-                matchesPlayed = "9",
-                matchesWon = "6"
+                matchesPlayed = 9,
+                matchesWon = 6
             )
         }
     }

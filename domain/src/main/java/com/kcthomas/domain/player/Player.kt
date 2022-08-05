@@ -10,6 +10,6 @@ const val PLAYER_TABLE_NAME = "players"
 data class Player(
     @PrimaryKey val id: String,
     val name: String,
-    @ColumnInfo(name = "matches_played") val matchesPlayed: String,
-    @ColumnInfo(name = "matches_won") val matchesWon: String
+    @ColumnInfo(name = "matches_played") val matchesPlayed: Int,
+    @ColumnInfo(name = "matches_won") val matchesWon: Int
 )

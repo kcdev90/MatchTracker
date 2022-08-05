@@ -95,8 +95,8 @@ class MatchHistoryViewModel @Inject constructor(
                         Player(
                             id = player.id,
                             name = player.name,
-                            matchesPlayed = "${player.matchesPlayed.toInt() + 1}",
-                            matchesWon = "${player.matchesWon.toInt() + increment}"
+                            matchesPlayed = player.matchesPlayed + 1,
+                            matchesWon = player.matchesWon + increment
                         )
                     )
                 },
@@ -111,8 +111,8 @@ class MatchHistoryViewModel @Inject constructor(
                         Player(
                             id = UUID.randomUUID().toString(),
                             name = playerName,
-                            matchesPlayed = "1",
-                            matchesWon = "$increment"
+                            matchesPlayed = 1,
+                            matchesWon = increment
                         )
                     )
                 }
@@ -128,7 +128,7 @@ class MatchHistoryViewModel @Inject constructor(
             .subscribe(
                 {},
                 { throwable ->
-                    Log.w(TAG, "${throwable.message}")
+                    Log.e(TAG, "${throwable.message}")
                 }
             )
             .also { disposables.add(it) }
@@ -144,7 +144,7 @@ class MatchHistoryViewModel @Inject constructor(
                     loadMatches()
                 },
                 { throwable ->
-                    Log.w(TAG, "${throwable.message}")
+                    Log.e(TAG, "${throwable.message}")
                 }
             )
             .also { disposables.add(it) }

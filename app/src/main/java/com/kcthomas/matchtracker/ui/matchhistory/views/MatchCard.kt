@@ -51,8 +51,8 @@ fun MatchCard(
                     )
                     Score(
                         modifier = Modifier.weight(1f),
-                        player1Score = match.player1Score,
-                        player2Score = match.player2Score
+                        player1Score = "${match.player1Score}",
+                        player2Score = "${match.player2Score}"
                     )
                     Text(
                         modifier = Modifier.weight(1f),
@@ -154,9 +154,9 @@ fun PreviewMatchCard() {
                 match = Match(
                     id = "",
                     player1Name = "Amos",
-                    player1Score = "4",
+                    player1Score = 4,
                     player2Name = "Diego",
-                    player2Score = "5",
+                    player2Score = 5,
                     timestamp = "Jul 26, 2022 1:45 PM"
                 ),
                 onDismiss = {},
@@ -167,9 +167,9 @@ fun PreviewMatchCard() {
                 match = Match(
                     id = "",
                     player1Name = "Joel",
-                    player1Score = "5",
+                    player1Score = 5,
                     player2Name = "Tim",
-                    player2Score = "2",
+                    player2Score = 2,
                     timestamp = "Jul 25, 2022 9:30 AM"
                 ),
                 onDismiss = {},

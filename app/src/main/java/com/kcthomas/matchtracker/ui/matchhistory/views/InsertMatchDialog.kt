@@ -38,11 +38,15 @@ fun InsertMatchDialog(
             buttons = {
                 var player1Name by rememberSaveable { mutableStateOf(match?.player1Name ?: "") }
                 var player1NameError by rememberSaveable { mutableStateOf(false) }
-                var player1Score by rememberSaveable { mutableStateOf(match?.player1Score ?: "") }
+                var player1Score by rememberSaveable {
+                    mutableStateOf(match?.player1Score?.toString() ?: "")
+                }
                 var player1ScoreError by rememberSaveable { mutableStateOf(false) }
                 var player2Name by rememberSaveable { mutableStateOf(match?.player2Name ?: "") }
                 var player2NameError by rememberSaveable { mutableStateOf(false) }
-                var player2Score by rememberSaveable { mutableStateOf(match?.player2Score ?: "") }
+                var player2Score by rememberSaveable {
+                    mutableStateOf(match?.player2Score?.toString() ?: "")
+                }
                 var player2ScoreError by rememberSaveable { mutableStateOf(false) }
 
                 Column(
@@ -122,9 +126,9 @@ fun InsertMatchDialog(
                                     Match(
                                         id = match?.id ?: UUID.randomUUID().toString(),
                                         player1Name = player1Name,
-                                        player1Score = player1Score,
+                                        player1Score = player1Score.toInt(),
                                         player2Name = player2Name,
-                                        player2Score = player2Score,
+                                        player2Score = player2Score.toInt(),
                                         timestamp = match?.timestamp ?: currentDateTimeString()
                                     )
                                 )
