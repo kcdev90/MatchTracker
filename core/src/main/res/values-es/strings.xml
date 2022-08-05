@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="match_history">Historial de partidos</string>
+    <string name="insert_match">Crear o editar coincidencia</string>
+    <string name="insert_match_dialog_title">Ingrese la información del partido</string>
+    <string name="player1_name">Nombre del jugador 1</string>
+    <string name="player2_name">Nombre del jugador 2</string>
+    <string name="score">Puntaje</string>
+    <string name="enter_player_name">Por favor ingrese el nombre del jugador</string>
+    <string name="enter_player_score">Por favor ingrese la puntuación del jugador</string>
+    <string name="empty_message">No hay artículos para mostrar</string>
+    <string name="warning">Advertencia</string>
+    <string name="failure_load_matches">No se pudieron cargar las coincidencias</string>
+    <string name="leaderboard">Tabla de clasificación</string>
+    <string name="menu">Menú</string>
+    <string name="failure_load_players">No se pudieron cargar los jugadores</string>
+    <string name="order_by">Ordenar por:</string>
+    <string name="done">HECHO</string>
+    <string name="matches_played">Partidos Jugados</string>
+    <string name="matches_won">Partidos ganados</string>
+    <string name="win_rate">Ratio de victorias</string>
+</resources>

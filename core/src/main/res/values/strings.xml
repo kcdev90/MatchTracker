@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="match_history">Match History</string>
+    <string name="insert_match">Create or edit match</string>
+    <string name="insert_match_dialog_title">Enter Match Info</string>
+    <string name="player1_name">Player 1 Name</string>
+    <string name="player2_name">Player 2 Name</string>
+    <string name="score">Score</string>
+    <string name="enter_player_name">Please enter player name</string>
+    <string name="enter_player_score">Please enter player score</string>
+    <string name="empty_message">No items to display</string>
+    <string name="warning">Warning</string>
+    <string name="failure_load_matches">Failed to load Matches</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="menu">Menu</string>
+    <string name="failure_load_players">Failed to load Players</string>
+    <string name="order_by">Order By:</string>
+    <string name="done">DONE</string>
+    <string name="matches_played">Matches Played</string>
+    <string name="matches_won">Matches Won</string>
+    <string name="win_rate">Win Rate</string>
+</resources>
